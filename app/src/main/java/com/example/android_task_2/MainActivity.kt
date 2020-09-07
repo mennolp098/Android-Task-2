@@ -26,18 +26,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-
-        for (i in Place.PLACE_NAMES.indices) {
-            places.add(Place(Place.PLACE_NAMES[i], Place.PLACE_RES_DRAWABLE_IDS[i]))
-
-        }
-        placeAdapter.notifyDataSetChanged()
-
-        /*
-        binding.rvPlaces.layoutManager = StaggeredGridLayoutManager(2, this@MainActivity, StaggeredGridLayoutManager.HORIZONTAL);
+        binding.rvPlaces.layoutManager = StaggeredGridLayoutManager(2,
+            StaggeredGridLayoutManager.VERTICAL);
         binding.rvPlaces.adapter = placeAdapter
         binding.rvPlaces.addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
-        createItemTouchHelper().attachToRecyclerView(binding.rvPlaces) */
+        
+        for (i in Place.PLACE_NAMES.indices) {
+            places.add(Place(Place.PLACE_NAMES[i], Place.PLACE_RES_DRAWABLE_IDS[i]))
+        }
+        placeAdapter.notifyDataSetChanged()
+        //createItemTouchHelper().attachToRecyclerView(binding.rvPlaces)
     }
 
 }
