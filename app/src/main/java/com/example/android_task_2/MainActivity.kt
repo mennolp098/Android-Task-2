@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             StaggeredGridLayoutManager.VERTICAL);
         binding.rvPlaces.adapter = placeAdapter
         binding.rvPlaces.addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
-        
+
         for (i in Place.PLACE_NAMES.indices) {
             places.add(Place(Place.PLACE_NAMES[i], Place.PLACE_RES_DRAWABLE_IDS[i]))
         }
